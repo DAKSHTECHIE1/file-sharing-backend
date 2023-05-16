@@ -1,0 +1,5 @@
+.env
+uploads/*
+# we need upload folder bcoz uske andar jaa rahi hogi cheeze acc. to logic
+#but uske andar ki images jo abhi hai faltu mai already before deployment vo nhi chahiye
+node_modules
