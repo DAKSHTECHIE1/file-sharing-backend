@@ -20,6 +20,10 @@ app.use('/files',require('./routes/show'));
 app.use('/files/download',require('./routes/download'));
 
 
+app.get('/',function(req,res){
+    return res.render('home',{});
+})
+
 
 
 app.listen(port,function(){
