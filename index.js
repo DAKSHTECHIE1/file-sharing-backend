@@ -1,7 +1,7 @@
 const express= require('express');
 const app=express();
 const path=require('path');
-const port=process.env.port||3000;
+const port=3000;
 const connectDB=require('./config/mongoose.js');
 connectDB();
 
@@ -21,7 +21,7 @@ app.use('/files/download',require('./routes/download'));
 
 
 app.get('/',function(req,res){
-    return res.render('home',{});
+    return res.send("<h1>ahahahhzzahahahahaa</h1>")
 })
 
 
