@@ -86,7 +86,7 @@ router.post('/send',async function(req,res){
     sendmail({
         from:sender,
         to:reciever,
-        subject:'inshare file sharing web app powered by Daksh.corp',
+        subject:'inshare file sharing web ap powered by Daksh.corp',
         text:`${sender} has shared a file with you`,
         html:require('../services/emailtemplate')({
             sender:sender,

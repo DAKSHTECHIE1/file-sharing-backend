@@ -21,7 +21,9 @@ app.use('/files/download',require('./routes/download'));
 
 
 app.get('/',function(req,res){
-    return res.send("<h1>ahahahhzzahahahahaa</h1>")
+    return res.render('home.ejs',{
+        apple:process.env.APP_BASE_URL
+    })
 })
 
 
