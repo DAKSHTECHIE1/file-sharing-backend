@@ -21,10 +21,10 @@ app.use('/files/download',require('./routes/download'));
 
 
 app.get('/',function(req,res){
-    return res.send("<h1>ahahahhzzahahahahaa</h1>")
+    return res.render('index.ejs',{});
 })
 
-
+// git push origin master
 
 app.listen(port,function(){
     console.log('port is running at port no.',port);
