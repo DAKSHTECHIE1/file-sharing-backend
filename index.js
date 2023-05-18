@@ -7,7 +7,8 @@ connectDB();
 app.use(express.static('public'));
 //by default express server json data recieve nhi krta hai explicitly btana hota hai ki hum json data bhej rahe hai ussey recieve kro!!!!!!!!!!
 //ab json data parse kr payega
-app.use(express.json());
+// app.use(express.json());
+app.use(bodyParser.json());
 app.set('views',path.join(__dirname,'/views'));
 app.set('view engine','ejs');
 
@@ -20,7 +21,7 @@ app.use('/files/download',require('./routes/download'));
 
 
 app.get('/',function(req,res){
-    return res.render('index.ejs',{});
+    return res.render('index',{});
 })
 
 // git push origin master
