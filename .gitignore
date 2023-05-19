@@ -1,9 +1,9 @@
 .env
-uploads/*
+# uploads/*
 # we need upload folder bcoz uske andar jaa rahi hogi cheeze acc. to logic
 #but uske andar ki images jo abhi hai faltu mai already before deployment vo nhi chahiye
 node_modules
 #upload empty hoga to git issey push nhi krega isliye below vli line is req.
-!uploads/.gitkeep
+# !uploads/.gitkeep
 #computer ka folder hai mac ke andar aata hai ye bhi nhi bhejna hai
 .DS_Store
