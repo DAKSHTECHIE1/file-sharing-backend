@@ -20,10 +20,10 @@ let storage= multer.diskStorage({
 let upload=multer({
     storage,//storage:storage
     limit:{fileSize: 1000000*100 }//in bytes 100MB
-}).single('myfile')//name attribute hi dena hai only!!!!!
+})//name attribute hi dena hai only!!!!!
 //single file therefore single
 
-router.post('/',function(req,res){//cb fn hai req,res system se aate request and response obj hote jaise event aata in addeventlistener mai
+router.post('/',upload.single('myfile'),function(req,res){//cb fn hai req,res system se aate request and response obj hote jaise event aata in addeventlistener mai
     
     //store file in uploads
        upload(req,res,async(err)=>{
