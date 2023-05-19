@@ -18,7 +18,6 @@ let storage= multer.diskStorage({
 
 
 
-
 let upload=multer({
     storage,//storage:storage
     limit:{fileSize: 1000000*100 }//in bytes 100MB
@@ -29,6 +28,8 @@ router.post('/',function(req,res){//cb fn hai req,res system se aate request and
     
     //store file in uploads
        upload(req,res,async(err)=>{
+        console.log('storage',storage)
+        console.log('upload',upload);
             //validate req.//bcoz upload ke time req mai file de raha hoga system
             if(!req.file)//file is not coming in req
             {
