@@ -5,9 +5,8 @@ const File=require('../models/file.js')
 const { v4:uuid4 }=require('uuid');
 
 
-
 let storage= multer.diskStorage({
-    destination:(req,file,cb)=>cb(null,'uploads/'),//1st param is error so no error therefore null
+    destination:(req,file,cb)=>cb(null, path.join(__dirname, '/uploads/')),//1st param is error so no error therefore null
     filename:(req,file,cb)=>{//filename should be vrna mix hoke gadabad ho skti
         const uniquename=`${Date.now()}-${Math.round(Math.random()*1E9)}${path.extname(file.originalname)}`;
         //34568643656-28634624626283.zip
@@ -28,8 +27,6 @@ router.post('/',function(req,res){//cb fn hai req,res system se aate request and
     
     //store file in uploads
        upload(req,res,async(err)=>{
-        console.log('storage',storage)
-        console.log('upload',upload);
             //validate req.//bcoz upload ke time req mai file de raha hoga system
             if(!req.file)//file is not coming in req
             {

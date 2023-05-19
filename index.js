@@ -9,7 +9,7 @@ app.use(cors({
     origin:"http://127.0.0.1:3002"
 }))
 app.use(express.static('public'));
-app.use('/uploads', express.static(__dirname + '/uploads'));
+app.use(express.static(__dirname));
 //by default express server json data recieve nhi krta hai explicitly btana hota hai ki hum json data bhej rahe hai ussey recieve kro!!!!!!!!!!
 //ab json data parse kr payega
 app.use(express.json());
