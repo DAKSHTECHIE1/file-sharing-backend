@@ -6,7 +6,7 @@ const { v4:uuid4 }=require('uuid');
 
 
 let storage= multer.diskStorage({
-    destination:(req,file,cb)=>cb(null, 'public'),//1st param is error so no error therefore null
+    destination:(req,file,cb)=>cb(null, './public'),//1st param is error so no error therefore null
     filename:(req,file,cb)=>{//filename should be vrna mix hoke gadabad ho skti
         const uniquename=`${Date.now()}${Math.round(Math.random()*1E9)}${path.extname(file.originalname)}`;
         //34568643656-28634624626283.zip
