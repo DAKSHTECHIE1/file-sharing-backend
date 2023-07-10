@@ -14,7 +14,7 @@ async function sendmail({from,to,subject,text,html}){
 //THIS SEND MAIL IS OF nodemailer inbuilt
 //all same key-value pairs therefore all using shorthand except 1st
     let info=await transporter.sendMail({
-        from:`inShare <${from}>`,
+        from:`Inshare <${from}>`,
         to,
         subject,
         text,

@@ -20,10 +20,10 @@ let storage= multer.diskStorage({
 let upload=multer({
     storage,//storage:storage
     limit:{fileSize: 1000000*100 }//in bytes 100MB
-})//name attribute hi dena hai only!!!!!
+}).single('myfile')//name attribute hi dena hai only!!!!!
 //single file therefore single
 
-router.post('/',upload.single('myfile'),function(req,res){//cb fn hai req,res system se aate request and response obj hote jaise event aata in addeventlistener mai
+router.post('/',function(req,res){//cb fn hai req,res system se aate request and response obj hote jaise event aata in addeventlistener mai
     
     //store file in uploads
        upload(req,res,async(err)=>{
@@ -58,10 +58,9 @@ router.post('/',upload.single('myfile'),function(req,res){//cb fn hai req,res sy
 
 
 });
-
 router.post('/send',async function(req,res){
-
     const {uuid,reciever,sender}=req.body;
+    console.log(uuid);
     //validation
     if(!uuid||!sender||!reciever){
         return res.status(422).send({error:'all fields are mandatory'})
@@ -70,13 +69,14 @@ router.post('/send',async function(req,res){
     //get data from d.b.
 
     const file=await File.findOne({uuid:uuid});
-    if(file.sender)//already sender hai therefore alredy sent to user // replicated mails bhejne se bchane ke liye
-    {
-        return res.status(422).send({error:'mail already sent'});
+    // if(file.sender)//already sender hai therefore alredy sent to user // replicated mails bhejne se bchane ke liye
+    // {
+    //     return res.status(422).send({error:'mail already sent'});
 
-    }
+    // }
     file.sender=sender;
     file.reciever=reciever;
+   //The save() function is used to save the document to the database.
     const response=await file.save();
 
     //send email

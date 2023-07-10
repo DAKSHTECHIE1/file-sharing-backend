@@ -1,5 +1,7 @@
 module.exports=({sender,downloadlink,size,expires})=>{
-    return`html with inline styles`
+    return`
+    <a href="${downloadlink}">Link</a>
+    `
 
 }
 //isme koi external file nhi lagate hai therefore styles inline...
