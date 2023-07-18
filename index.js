@@ -7,7 +7,8 @@ const connectDB=require('./config/mongoose.js');
 connectDB();
 app.use(express.json());
 app.use(cors({
-    origin:"http://localhost:3002"
+    // origin:"http://localhost:3002"
+    origin: "*"
 }))
 app.use(express.static('public'));
 //by default express server json data recieve nhi krta hai explicitly btana hota hai ki hum json data bhej rahe hai ussey recieve kro!!!!!!!!!!
