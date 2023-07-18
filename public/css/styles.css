@@ -1,0 +1,39 @@
+body{
+    background-color: rgb(240, 190, 190);
+}
+#heading{
+    text-align:center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+}
+#btn{
+    position: relative;
+    top:20px;
+    text-align:center;
+}
+button{
+    height:50px;
+    width:200px;
+    background-color: rgb(249, 216, 216);
+}
+a{
+    text-decoration: none;
+    color:black;
+    font-size: 30px;
+}
+#size{
+    position: relative;
+    top:25px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
