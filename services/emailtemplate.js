@@ -1,5 +1,6 @@
 module.exports=({sender,downloadlink,size,expires})=>{
     return`
+    <div>Yoy friend shared a file with you . click on the link to download</div>
     <a href="${downloadlink}">Link</a>
     `
 
