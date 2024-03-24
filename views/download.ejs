@@ -1,9 +1,15 @@
 <link rel="stylesheet" href="/css/styles.css">
-<div id="heading">Welcome to Download Page</div>
-<div id="btn">
-<button><a href="<%=download%>">Download</a></button>
+<div id="container">
+    <div id="heading">Welcome to Download Page</div>
+    <div id="btn">
+    <!-- <button<a href="<%=download%>">Download</a></button> -->
+    <a href="<%=download%>"><div id="download-icon"></div></a>
+    </div>
+    <div id="size">
+        File-Size: <%=(filesize/1000000).toFixed(2)%> MB
+    </div>
 </div>
-<div id="size">File-Size:<%=Math.round(filesize/1000)%>KB</div>
+
 
 
 

@@ -5,4 +5,4 @@ module.exports=({sender,downloadlink,size,expires})=>{
     `
 
 }
-//isme koi external file nhi lagate hai therefore styles inline...
+//isme koi external file nhi lagate hai therefore styles inline.
