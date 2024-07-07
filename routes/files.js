@@ -19,7 +19,7 @@ let storage= multer.diskStorage({
 
 let upload=multer({
     storage,//storage:storage
-    limit:{fileSize: 1000000*100 }//in bytes 100MB
+    limit:{fileSize: 1000000*10 }//in bytes 10MB
 }).single('myfile')//name attribute hi dena hai only!!!!!
 //single file therefore single
 
